@@ -1,1 +1,1 @@
-find . -name 'a*' -o -name '*z' -o -name 'z*a!'
+find . -type f -name '*.sh' -execbasement {} \; | cut -d '.' -f1 | sort -r
