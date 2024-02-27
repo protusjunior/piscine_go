@@ -1,1 +1,1 @@
-find . -type f -name '*.sh' -execbasement {} \; | cut -d '.' -f1 | sort -r
+ls -c -m --indicator-style=slash | tr -d ""
