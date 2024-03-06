@@ -5,5 +5,4 @@ func NRune(s string, n int) rune {
 		return '\x00'
 	}
 	
-	return rune([]rune(s)[n])
-}
+	return rune([]rune(s)[n])}
