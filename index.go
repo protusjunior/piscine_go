@@ -2,7 +2,7 @@ package piscine
 
 func Index(s string, toFind string) int {
 	str := []rune(s)
-	match :=[]rune(toFind)
+	match := []rune(toFind)
 	for i := 0; i < len(str)-len(match); i++ {
 		if equal(str[i:i+len(match)], match) {
 			    return i
@@ -14,7 +14,7 @@ func Index(s string, toFind string) int {
 func equal(a, b []rune) bool {
 	for i, v := range a {
 	        if v != b[i] {
-				    return false
+				 return false
 			}	
 	}
 	return true
