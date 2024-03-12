@@ -34,4 +34,3 @@ func main() {
 		printStr(OddMsg)
 	}
 }
-
