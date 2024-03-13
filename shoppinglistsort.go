@@ -1,14 +1,10 @@
 package piscine
 
-func ShoppingListSort(slice []sring) []string {
+func ShoppingListSort(slice []string) []string {
 	for i := 0; i < len(slice); i++ {
-		for j := i + 1 < len(slice); j ++ {
-			if len(slice[i]) != len(slice[j]) {
-				if len(slice[i]) > len(slice[j]) {
-					temp := slice[i]
-					slice[i] = slice[j]
-					slice[j] = temp
-				}
+		for j := 0; j < len(slice)-1; j++ {
+			if len(slice[j]) > len(slice[j+1]) {
+				slice[j], slice[j+1] = slice[j+1], slice[j]
 			}
 		}
 	}
