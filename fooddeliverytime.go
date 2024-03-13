@@ -11,7 +11,6 @@ func FoodDeliveryTime(order string) int {
 		"nuggets": {preptime: 12},
 	}
 	if val, ok := menu[order]; ok {
-		
 		return val.preptime
 	}
 	return 404
