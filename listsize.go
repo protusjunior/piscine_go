@@ -1,11 +1,11 @@
 package piscine
 
 func ListSize(l *List) int {
-	count := 0
+	size := 0
 	current := l.Head
 	for current != nil {
-		count++
+		size++
 		current = current.Next
 	}
-	return count
+	return size
 }
