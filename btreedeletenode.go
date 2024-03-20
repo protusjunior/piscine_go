@@ -1,22 +1,26 @@
 package piscine
 
 func BTreeDeleteNode(root, node *TreeNode) *TreeNode {
-	if node.Left == nil && node.Right == nil {
-		BTreeTransplant(root, node, nil)
-	} else if node.Left == nil {
-		BTreeTransplant(root, node, node.Right)
-	} else if node.Right == nil {
-		BTreeTransplant(root, node, node.Left)
+	if node == nil {
+		return root
+	}
+	if root.Data > node.Data {
+		root.Left = BTreeDeleteNode(root.Left, node)
+	} else if root.Data < node.Data {
+		root.Right = BTreeDeleteNode(root.Right, node)
 	} else {
-		y := BTreeMin(node.Right)
-		if y != nil && y.Parent != node {
-			root = BTreeTransplant(root, y, y.Right)
-			y.Right = node.Right
-			y.Right.Parent = y
+		if root.Left == nil {
+			store := root.Right
+			root = nil
+			return store
+		} else if root.Right == nil {
+			store := root.Left
+			root = nil
+			return store
 		}
-		root = BTreeTransplant(root, node, y)
-		y.Left = node.Left
-		y.Left.Parent = y
+		store := BTreeMin(root.Right)
+		root.Data = store.Data
+		root.Right = BTreeDeleteNode(root.Right, store)
 	}
 	return root
 }
